@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singapore Toto and 4D Generator with AI</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore Toto and 4D Generator with AI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Singapore Toto and 4D Generator with AI</h1>
+  <h1>Singapore Toto and 4D Generator with AI</h1>
 
-    <div class="generator-container">
-        <!-- Toto Generator Section -->
-        <div class="generator-section">
-            <h2>Toto Generator</h2>
+  <div class="generator-container">
+    <!-- Toto Generator Section -->
+    <div class="generator-section">
+      <h2>Toto Generator</h2>
 
-            <label for="totoBetType">Select Bet Type:</label>
-            <select id="totoBetType">
-                <option value="ordinary">Ordinary</option>
-                <option value="system7">System 7</option>
-                <option value="system8">System 8</option>
-                <option value="system9">System 9</option>
-                <option value="system10">System 10</option>
-                <option value="system11">System 11</option>
-                <option value="system12">System 12</option>
-                <option value="systemRoll">System Roll</option>
-            </select>
+      <label for="totoBetType">Select Bet Type:</label>
+      <select id="totoBetType">
+        <option value="ordinary">Ordinary</option>
+        <option value="system7">System 7</option>
+        <option value="system8">System 8</option>
+        <option value="system9">System 9</option>
+        <option value="system10">System 10</option>
+        <option value="system11">System 11</option>
+        <option value="system12">System 12</option>
+        <option value="systemRoll">System Roll</option>
+      </select>
 
-            <button onclick="generateTotoNumbers()">Generate Toto Numbers</button>
+      <button onclick="generateTotoNumbers()">Generate Toto Numbers</button>
 
-            <div id="totoResult"></div>
-        </div>
-
-        <!-- 4D Generator Section -->
-        <div class="generator-section">
-            <h2>4D Generator</h2>
-
-            <label for="4dBetType">Select Bet Type:</label>
-            <select id="4dBetType">
-                <option value="ordinaryEntry">4D Ordinary Entry</option>
-                <option value="roll">4D Roll</option>
-                <option value="systemEntry">System Entry, iBet</option>
-            </select>
-
-            <button onclick="generate4DNumbers()">Generate 4D Numbers</button>
-
-            <div id="4dResult"></div>
-        </div>
+      <div id="totoResult"></div>
     </div>
 
-    <!-- AI Section -->
-    <div class="ai-section">
-        <h2>AI-Enhanced Number Generator</h2>
-        <div class="ai-content">
-            <p>Unlock the potential of our advanced artificial intelligence! Our cutting-edge algorithms meticulously analyze patterns to suggest the most strategic number choices, significantly enhancing your winning potential.</p>
-            <p>Experience the future of number generation with our AI-driven suggestions!</p>
-        </div>
-    </div>
+    <!-- 4D Generator Section -->
+    <div class="generator-section">
+      <h2>4D Generator</h2>
 
-    <!-- GitHub Link Section -->
-    <div class="github-link">
-        <p>Check out my GitHub profile: <a href="https://github.com/adithyodw" target="_blank">adithyodw</a></p>
-    </div>
+      <label for="4dBetType">Select Bet Type:</label>
+      <select id="4dBetType">
+        <option value="ordinaryEntry">4D Ordinary Entry</option>
+        <option value="roll">4D Roll</option>
+        <option value="systemEntry">System Entry, iBet</option>
+      </select>
 
-    <script src="script.js"></script>
+      <button onclick="generate4DNumbers()">Generate 4D Numbers</button>
+
+      <div id="4dResult"></div>
+    </div>
+  </div>
+
+  <!-- AI Section -->
+  <div class="ai-section">
+    <h2>AI-Enhanced Number Generator</h2>
+    <div class="ai-content">
+      <p>Unlock the potential of our advanced artificial intelligence! Our cutting-edge algorithms meticulously analyze
+        patterns to suggest the most strategic number choices, significantly enhancing your winning potential.</p>
+      <p>Experience the future of number generation with our AI-driven suggestions!</p>
+    </div>
+  </div>
+
+  <!-- GitHub Link Section -->
+  <div class="github-link">
+    <p>Check out my GitHub profile: <a href="https://github.com/adithyodw" target="_blank">adithyodw</a></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-</html>
 
+</html>
