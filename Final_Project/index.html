@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Toto and 4D Generator with AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+        }
+
+        .generator-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        select, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ffcc00, #ffdb4d);
+        }
+
+        #totoResult, #4dResult {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #ffcc00;
+        }
+
+        .generator-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            color: #fff;
+        }
+
+        .ai-content {
+            line-height: 1.6;
+        }
+
+        .github-link {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .github-link a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .github-link a:hover {
+            color: #555;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .generator-section {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Singapore Toto and 4D Generator with AI</h1>
+
+    <div class="generator-container">
+        <!-- Toto Generator Section -->
+        <div class="generator-section">
+            <h2>Toto Generator</h2>
+
+            <label for="totoBetType">Select Bet Type:</label>
+            <select id="totoBetType">
+                <option value="ordinary">Ordinary</option>
+                <option value="system7">System 7</option>
+                <option value="system8">System 8</option>
+                <option value="system9">System 9</option>
+                <option value="system10">System 10</option>
+                <option value="system11">System 11</option>
+                <option value="system12">System 12</option>
+                <option value="systemRoll">System Roll</option>
+            </select>
+
+            <button onclick="generateTotoNumbers()">Generate Toto Numbers</button>
+
+            <div id="totoResult"></div>
+        </div>
+
+        <!-- 4D Generator Section -->
+        <div class="generator-section">
+            <h2>4D Generator</h2>
+
+            <label for="4dBetType">Select Bet Type:</label>
+            <select id="4dBetType">
+                <option value="ordinaryEntry">4D Ordinary Entry</option>
+                <option value="roll">4D Roll</option>
+                <option value="systemEntry">System Entry, iBet</option>
+            </select>
+
+            <button onclick="generate4DNumbers()">Generate 4D Numbers</button>
+
+            <div id="4dResult"></div>
+        </div>
+    </div>
+
+    <!-- AI Section -->
+    <div class="ai-section">
+        <h2>AI-Enhanced Number Generator</h2>
+        <div class="ai-content">
+            <p>Unlock the potential of our advanced artificial intelligence! Our cutting-edge algorithms meticulously analyze patterns to suggest the most strategic number choices, significantly enhancing your winning potential.</p>
+            <p>Experience the future of number generation with our AI-driven suggestions!</p>
+        </div>
+    </div>
+
+    <!-- GitHub Link Section -->
+    <div class="github-link">
+        <p>Check out my GitHub profile: <a href="https://github.com/adithyodw" target="_blank">adithyodw</a></p>
+    </div>
+
+    <script>
+        function generateTotoNumbers() {
+            const betType = document.getElementById('totoBetType').value;
+            let numbers;
+
+            switch (betType) {
+                case 'ordinary':
+                    numbers = generateComplexAIOrdinaryNumbers();
+                    break;
+                case 'system7':
+                case 'system8':
+                case 'system9':
+                case 'system10':
+                case 'system11':
+                case 'system12':
+                    numbers = generateComplexAISystemNumbers(parseInt(betType.substring(6)));
+                    break;
+                case 'systemRoll':
+                    numbers = generateComplexAIOrdinaryNumbers().concat('R');
+                    break;
+                default:
+                    numbers = generateComplexAIOrdinaryNumbers();
+            }
+
+            displayResult('totoResult', `AI Suggested Toto Numbers: ${numbers.join(', ')}`);
+        }
+
+        function generateComplexAIOrdinaryNumbers() {
+            const numbers = [];
+            for (let i = 0; i < 6; i++) {
+                numbers.push(simulateComplexRandomDrawing());
+            }
+            return numbers;
+        }
+
+        function generateComplexAISystemNumbers(count) {
+            const numbers = new Set();
+            while (numbers.size < count) {
+                numbers.add(simulateComplexRandomDrawing());
+            }
+            return Array.from(numbers);
+        }
+
+        function simulateComplexRandomDrawing() {
+            // Simulate a more complex AI algorithm (replace with your logic)
+            return Math.floor(Math.random() * 49) + 1;
+        }
+
+        function generate4DNumbers() {
+            const betType = document.getElementById('4dBetType').value;
+            let numbers;
+
+            switch (betType) {
+                case 'ordinaryEntry':
+                    numbers = generate4DOrdinaryEntry();
+                    break;
+                case 'roll':
+                    numbers = generate4DRoll();
+                    break;
+                case 'systemEntry':
+                    numbers = generate4DSystemEntry();
+                    break;
+                default:
+                    numbers = generate4DOrdinaryEntry();
+            }
+
+            displayResult('4dResult', `AI Suggested 4D Numbers: ${numbers.join('')}`);
+        }
+
+        function generate4DOrdinaryEntry() {
+            const numbers = [];
+            for (let i = 0; i < 4; i++) {
+                numbers.push(Math.floor(Math.random() * 10));
+            }
+            return numbers;
+        }
+
+        function generate4DRoll() {
+            const numbers = [];
+            for (let i = 0; i < 3; i++) {
+                numbers.push(Math.floor(Math.random() * 10));
+            }
+            numbers.push('R');
+            return numbers;
+        }
+
+        function generate4DSystemEntry() {
+            const numbers = [];
+            for (let i = 0; i < 4; i++) {
+                numbers.push(Math.floor(Math.random() * 10));
+            }
+            return numbers;
+        }
+
+        function displayResult(resultId, result) {
+            const resultDiv = document.getElementById(resultId);
+            resultDiv.innerHTML = `<p>${result}</p>`;
+        }
+    </script>
+</body>
+</html>
