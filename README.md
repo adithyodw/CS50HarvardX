@@ -1,3 +1,11 @@
+![CS50x (1)](https://github.com/adithyodw/CS50HarvardX/assets/45558534/39bde0d7-1cfc-414a-bd77-12df96e7035a)
+![image](https://github.com/adithyodw/CS50HarvardX/assets/45558534/7d45f426-9ad5-4fb9-8437-c5a786f315b5)
+
+
+
+
+
+
 # Singapore Toto and 4D Generator with AI
 
 #### Video Demo:  <URL https://youtu.be/XmFPhIEMYVg>
