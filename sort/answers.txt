@@ -1,0 +1,38 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It performs well with already sorted data.
+
+sort2 uses: Merge Sort
+
+How do you know?: It's the fastest algorithm among the three.
+
+sort3 uses: Selection Sort
+
+How do you know?: It's the remaining algorithm not yet identified.
+
+
+
+
+sort1
+random5000    - 0.254
+random10000   - 0.263
+random50000   - 8.474
+reversed5000  - 0.079
+reversed10000 - 0.300
+reversed50000 - 6.231
+
+sort2
+random5000    - 0.161
+random10000   - 0.084
+random50000   - 0.702
+reversed5000  - 0.046
+reversed10000 - 0.077
+reversed50000 - 0.582
+
+sort3
+random5000    - 0.209
+random10000   - 0.263
+random50000   - 3.986
+reversed5000  - 0.079
+reversed10000 - 0.183
+reversed50000 - 4.047
