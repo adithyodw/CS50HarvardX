@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Multiple Choice Question
+            const mcQuestion = document.querySelector('#mc-question');
+            const mcButtons = document.querySelectorAll('.mc-choice');
+
+            mcButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    mcButtons.forEach(function (btn) {
+                        btn.classList.remove('selected');
+                    });
+
+                    this.classList.add('selected');
+
+                    // Check if the selected answer is correct
+                    const isCorrect = this.getAttribute('data-correct') === 'true';
+                    const feedback = document.querySelector('#mc-feedback');
+
+                    if (isCorrect) {
+                        feedback.textContent = 'Correct!';
+                        feedback.style.color = 'green';
+                    } else {
+                        feedback.textContent = 'Incorrect';
+                        feedback.style.color = 'red';
+                    }
+                });
+            });
+
+            // Free Response Question
+            const frQuestion = document.querySelector('#fr-question');
+            const frInput = document.querySelector('#fr-input');
+            const frButton = document.querySelector('#fr-button');
+            const frFeedback = document.querySelector('#fr-feedback');
+
+            frButton.addEventListener('click', function () {
+                const userAnswer = frInput.value.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+                const correctAnswer = 'your answer here'; // Replace with the correct answer
+
+                if (userAnswer === correctAnswer) {
+                    frFeedback.textContent = 'Correct!';
+                    frFeedback.style.color = 'green';
+                } else {
+                    frFeedback.textContent = 'Incorrect';
+                    frFeedback.style.color = 'red';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="header">
+    <h1>Trivia!</h1>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Part 1: Multiple Choice </h2>
+        <hr>
+        <h3 id="mc-question">What is the capital of France?</h3>
+        <button class="mc-choice" data-correct="false">Paris</button>
+        <button class="mc-choice" data-correct="false">London</button>
+        <button class="mc-choice" data-correct="true">Berlin</button>
+        <button class="mc-choice" data-correct="false">Rome</button>
+        <p id="mc-feedback"></p>
+    </div>
+
+    <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr>
+        <h3 id="fr-question">What is the capital of Canada?</h3>
+        <input type="text" id="fr-input" placeholder="Type your answer here">
+        <button id="fr-button">Confirm Answer</button>
+        <p id="fr-feedback"></p>
+    </div>
+</div>
+</body>
+</html>
