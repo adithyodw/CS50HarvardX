@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    {% if quote %}
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ quote["symbol"] }}</td>
+                    <td>{{ quote["name"] }}</td>
+                    <td>{{ quote["price"]|usd }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results for {{ symbol }} were found.</p>
+    {% endif %}
+
+{% endblock %}

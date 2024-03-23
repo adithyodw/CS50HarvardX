@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Holding value</th>
+            </tr>
+        </thead>
+        {% if user_info %}
+        <tbody>
+            {% for holding in user_info %}
+                <tr>
+                    <td>Holding</td>
+                    <td>{{ holding["symbol"] }}</td>
+                    <td>{{ holding["name"] }}</td>
+                    <td>{{ holding["price"]|usd }}</td>
+                    <td>{{ holding["amount"] }}</td>
+                    <td>{{ holding["value"]|usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% else %}
+            <p>You don't own any stacks.</p>
+        {% endif %}
+        <tfoot>
+            <tr>
+                <td>Cash</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ user_cash|usd }}</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">Net Worth</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="fw-bold">{{ net_worth|usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

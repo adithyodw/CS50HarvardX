@@ -1,0 +1,27 @@
+-- CREATE USERS TABLE --
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    username TEXT NOT NULL,
+    hash TEXT NOT NULL,
+    cash NUMERIC NOT NULL DEFAULT 10000.00
+    );
+
+CREATE UNIQUE INDEX username ON users (username);
+
+-- CREATE AMOUNTS --
+CREATE TABLE amounts(
+user_id INTEGER NOT NULL REFERENCES users(id),
+symbol TEXT NOT NULL,
+amount INTEGER,
+PRIMARY KEY(user_id, symbol)
+);
+
+--CREATE HISTORY --
+CREATE TABLE history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL, symbol TEXT NOT NULL,
+    price REAL NOT NULL, shares INTEGER NOT NULL,
+    type TEXT NOT NULL,
+    date TEXT NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+    );
